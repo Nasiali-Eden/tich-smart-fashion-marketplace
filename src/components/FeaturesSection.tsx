@@ -73,6 +73,36 @@ const PhoneMockup = ({ type }: { type: string }) => (
   </div>
 );
 
+const FeatureRow = ({ feat, index }: { feat: typeof features[0]; index: number }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const imageLeft = index % 2 === 0;
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      className="grid md:grid-cols-2 gap-12 items-center"
+    >
+      <div className={`${!imageLeft ? "md:order-2" : ""}`}>
+        <PhoneMockup type={feat.screen} />
+      </div>
+      <div className={`${!imageLeft ? "md:order-1" : ""}`}>
+        <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent-red text-xs font-semibold mb-4">
+          {feat.badge}
+        </span>
+        <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{feat.title}</h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">{feat.body}</p>
+        <a href="#" className="text-accent-red font-semibold text-sm hover:underline">
+          {feat.cta}
+        </a>
+      </div>
+    </motion.div>
+  );
+};
+
 const FeaturesSection = () => {
   return (
     <section id="features" className="bg-section-light py-20 md:py-28">
@@ -85,38 +115,9 @@ const FeaturesSection = () => {
         </div>
 
         <div className="space-y-20">
-          {features.map((feat, i) => {
-            const ref = useRef(null);
-            const inView = useInView(ref, { once: true, margin: "-80px" });
-            const imageLeft = i % 2 === 0;
-
-            return (
-              <motion.div
-                ref={ref}
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-                className={`grid md:grid-cols-2 gap-12 items-center ${
-                  !imageLeft ? "md:direction-rtl" : ""
-                }`}
-              >
-                <div className={`${!imageLeft ? "md:order-2" : ""}`}>
-                  <PhoneMockup type={feat.screen} />
-                </div>
-                <div className={`${!imageLeft ? "md:order-1" : ""}`}>
-                  <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent-red text-xs font-semibold mb-4">
-                    {feat.badge}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{feat.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{feat.body}</p>
-                  <a href="#" className="text-accent-red font-semibold text-sm hover:underline">
-                    {feat.cta}
-                  </a>
-                </div>
-              </motion.div>
-            );
-          })}
+          {features.map((feat, i) => (
+            <FeatureRow key={i} feat={feat} index={i} />
+          ))}
         </div>
       </div>
     </section>
