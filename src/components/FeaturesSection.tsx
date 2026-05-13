@@ -19,57 +19,31 @@ const features = [
   {
     badge: "Secure Payments",
     title: "Payments built for Kenya",
-    body: "M-Pesa integration coming soon. Structured, traceable, and secure — so both vendors and buyers can transact with confidence.",
+    body: "M-Pesa integration is live. Structured, traceable, and secure — so both vendors and buyers transact with full confidence.",
     cta: "Join the waitlist →",
     screen: "payments",
   },
 ];
 
+const screenshotMap: Record<string, string> = {
+  listing: "/images/Screenshots/2.png",
+  orders: "/images/Screenshots/3.png",
+  payments: "/images/Screenshots/4.png",
+};
+
+const screenshotAlt: Record<string, string> = {
+  listing: "Tich app new post listing screen",
+  orders: "Tich app order management screen",
+  payments: "Tich app wallet and earnings screen",
+};
+
 const PhoneMockup = ({ type }: { type: string }) => (
-  <div className="w-[260px] h-[480px] mx-auto bg-navy-dark rounded-[36px] border-4 border-white/10 p-2.5 shadow-xl">
-    <div className="w-full h-full rounded-[26px] bg-gradient-to-br from-[#1a2f50] to-[#0d1b33] flex flex-col p-5 gap-3">
-      <div className="w-20 h-2.5 bg-white/10 rounded-full" />
-      <div className="w-14 h-2.5 bg-white/10 rounded-full" />
-      {type === "listing" && (
-        <div className="mt-3 space-y-3">
-          {["Category", "Size", "Price", "Condition"].map((label) => (
-            <div key={label} className="bg-white/5 rounded-lg p-3 border border-white/10">
-              <div className="text-[10px] text-white/40 mb-1">{label}</div>
-              <div className="w-full h-2 bg-white/10 rounded-full" />
-            </div>
-          ))}
-        </div>
-      )}
-      {type === "orders" && (
-        <div className="mt-3 space-y-2">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="bg-white/5 rounded-lg p-3 border border-white/10 flex items-center gap-3">
-              <div className="w-10 h-10 bg-white/10 rounded-lg shrink-0" />
-              <div className="flex-1 space-y-1.5">
-                <div className="w-full h-2 bg-white/10 rounded-full" />
-                <div className="w-2/3 h-2 bg-white/10 rounded-full" />
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-      {type === "payments" && (
-        <div className="mt-3 space-y-3">
-          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-            <div className="text-white/30 text-[10px] mb-1">Total Revenue</div>
-            <div className="w-24 h-4 bg-white/10 rounded-full mx-auto" />
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-white/5 rounded-lg p-3 border border-white/10">
-                <div className="w-full h-2 bg-white/10 rounded-full mb-1" />
-                <div className="w-2/3 h-2 bg-white/10 rounded-full" />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
+  <div className="flex justify-center">
+    <img
+      src={screenshotMap[type]}
+      alt={screenshotAlt[type]}
+      className="w-[340px] drop-shadow-xl"
+    />
   </div>
 );
 

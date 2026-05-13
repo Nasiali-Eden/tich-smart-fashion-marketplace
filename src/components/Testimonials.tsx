@@ -1,35 +1,36 @@
-import { useState, useEffect, useCallback } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Star } from "lucide-react";
+import { Rocket, ShoppingBag, Wallet, Bell } from "lucide-react";
 
-const testimonials = [
-  { initials: "AN", quote: "Finally an app that understands how clothing vendors actually work. The upload system is a game changer.", name: "Amina N.", role: "Nairobi Fashion Vendor" },
-  { initials: "JK", quote: "I used to sell through WhatsApp groups. Now my listings are organized and buyers trust me more.", name: "James K.", role: "Online Boutique Owner" },
-  { initials: "FW", quote: "The vendor dashboard gives me a clear view of everything. I know exactly what's selling.", name: "Fatuma W.", role: "Clothes Reseller, Mombasa" },
-  { initials: "BM", quote: "I love that it's structured. Buyers can actually find what they're looking for instead of scrolling forever.", name: "Brian M.", role: "Wholesale Vendor" },
+const promises = [
+  {
+    icon: ShoppingBag,
+    title: "A marketplace that makes sense",
+    body: "No more chaotic DMs or confusing WhatsApp groups. Every listing will be structured with categories, sizes, pricing, and photos — so buyers can find exactly what they need.",
+  },
+  {
+    icon: Bell,
+    title: "Real-time order management",
+    body: "The moment a buyer places an order, you'll know. Manage fulfillment, track status, and communicate — all from one clean vendor dashboard.",
+  },
+  {
+    icon: Wallet,
+    title: "Payments you can trust",
+    body: "M-Pesa integration is already live. Every transaction is traceable and secure, so both vendors and buyers transact with complete confidence.",
+  },
+  {
+    icon: Rocket,
+    title: "Built for where fashion actually happens",
+    body: "This is not a copy-paste of a Western marketplace. Tich is designed from the ground up for African fashion vendors — the categories, the sizes, the payment rails, the workflow.",
+  },
 ];
 
 const Testimonials = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
-  const [active, setActive] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scrollTo = useCallback((idx: number) => {
-    setActive(idx);
-    scrollRef.current?.scrollTo({ left: idx * 340, behavior: "smooth" });
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      scrollTo((active + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [active, scrollTo]);
 
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="bg-navy py-20 md:py-28">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -37,46 +38,47 @@ const Testimonials = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
+          {/* Header */}
           <div className="text-center mb-14">
-            <span className="text-accent-red text-sm font-bold uppercase tracking-widest">What Vendors Say</span>
-            <h2 className="text-3xl md:text-[40px] font-bold text-foreground mt-3">Trusted by Fashion Vendors</h2>
+            <span className="text-accent-red text-sm font-bold uppercase tracking-widest">
+              Developer Note
+            </span>
+            <h2 className="text-3xl md:text-[40px] font-bold text-soft-white mt-3">
+              What We're Building for You
+            </h2>
+            <p className="text-slate-custom mt-4 max-w-xl mx-auto text-base leading-relaxed">
+              Tich has been built with one goal: to give fashion vendors in Africa a proper, 
+              professional home to run their business. Here's our commitment.
+            </p>
           </div>
 
-          <div ref={scrollRef} className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: "none" }}>
-            {testimonials.map((t, i) => (
-              <div
+          {/* Promise cards */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {promises.map((item, i) => (
+              <motion.div
                 key={i}
-                className="min-w-[300px] md:min-w-[320px] bg-card border border-border rounded-xl p-6 shadow-card snap-start shrink-0"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors duration-300"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-11 h-11 rounded-full bg-accent-red flex items-center justify-center text-soft-white font-bold text-sm">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                    <p className="text-muted-foreground text-xs">{t.role}</p>
-                  </div>
+                <div className="w-11 h-11 rounded-xl bg-accent-red/15 flex items-center justify-center mb-4">
+                  <item.icon size={22} className="text-accent-red" />
                 </div>
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={14} className="fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">"{t.quote}"</p>
-              </div>
+                <h3 className="text-soft-white font-bold text-lg mb-2">{item.title}</h3>
+                <p className="text-slate-custom text-sm leading-relaxed">{item.body}</p>
+              </motion.div>
             ))}
           </div>
 
-          <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => scrollTo(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  i === active ? "bg-accent-red w-6" : "bg-border"
-                }`}
-              />
-            ))}
+          {/* Sign-off */}
+          <div className="text-center mt-12">
+            <div className="inline-block border border-white/10 rounded-xl px-6 py-4 bg-white/5">
+              <p className="text-slate-custom text-sm italic">
+                "We're not done yet — but we're close. Join the waitlist and be part of the launch."
+              </p>
+              <p className="text-soft-white font-semibold text-sm mt-2">— The Tich Team</p>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -1,89 +1,84 @@
 import { motion } from "framer-motion";
+import { Check, ShoppingBag, Store } from "lucide-react";
+
+const trustBadges = ["Free to join", "Structured listings"];
 
 const HeroSection = () => {
   return (
-    <section className="bg-navy pt-28 pb-20 md:py-0 md:min-h-screen flex items-center relative overflow-hidden">
-      {/* Radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(16,36,68,1)_0%,_rgba(11,31,59,1)_70%)]" />
+    <section className="relative pt-28 pb-20 md:py-0 md:min-h-screen flex items-center overflow-hidden">
+      {/* Background Image with Fading Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/Other/aa.png"
+          alt="African Fashion"
+          className="w-full h-full object-cover object-[center_30%] md:object-[center_20%]"
+        />
+        {/* Gradient overlay: white on the left (for text), transparent on the right (for image subject) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent md:from-white/90 md:via-white/40 md:to-transparent" />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left */}
+        <div className="max-w-3xl">
+          {/* Left — Text content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full border border-white/20 text-soft-white text-sm mb-6">
-              🚀 Built for African Fashion Commerce
-            </span>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent-red text-xs font-semibold tracking-wider uppercase mb-7">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-red shrink-0" />
+              African Fashion Marketplace
+            </div>
 
-            <h1 className="text-4xl md:text-[56px] font-extrabold text-soft-white leading-[1.1] mb-6">
-              Sell Clothing Smarter.{" "}
-              <span className="block">Grow Your Fashion Business.</span>
+            {/* Headline */}
+            <h1 className="text-4xl md:text-[52px] lg:text-[58px] font-extrabold leading-[1.08] tracking-tight mb-5">
+              <span className="text-[#001F3F]">Discover Fashion</span>
+              <br />
+              <span className="text-accent-red">That Fits Your Style —</span>
+              <br />
+              <span className="text-accent-red">and Your Size.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-custom max-w-[480px] mb-8">
-              A structured marketplace where vendors list, manage, and sell
-              clothing — no chaos, no confusion.
+            {/* Subtitle */}
+            <p className="text-lg text-muted-foreground max-w-[490px] mb-10 leading-relaxed">
+              Shop curated styles from verified vendors, or list your clothing
+              and reach thousands of buyers — structured, secure, and
+              mobile-first.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-10">
               <a
-                href="#download"
-                className="bg-accent-red text-soft-white px-7 py-3.5 rounded-lg font-semibold text-center btn-glow transition-all duration-300"
+                href="#for-buyers"
+                className="inline-flex items-center justify-center gap-2.5 border-2 border-foreground text-foreground px-7 py-3.5 rounded-xl font-semibold text-[15px] hover:bg-foreground hover:text-white transition-all duration-300"
               >
-                Download App
+                <ShoppingBag size={17} strokeWidth={2.2} />
+                How to Buy
               </a>
               <a
                 href="#for-vendors"
-                className="border border-white/30 text-soft-white px-7 py-3.5 rounded-lg font-semibold text-center hover:bg-white/100 hover:text-foreground transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2.5 bg-accent-red text-white px-7 py-3.5 rounded-xl font-semibold text-[15px] btn-glow transition-all duration-300 hover:opacity-90"
               >
-                Start Selling
+                <Store size={17} strokeWidth={2.2} />
+                How to Sell
               </a>
             </div>
 
-            <p className="text-sm text-slate-dark-custom">
-              ✓ Free to join &nbsp; ✓ Structured listings &nbsp; ✓ M-Pesa ready
-            </p>
-          </motion.div>
-
-          {/* Right — Phone mockup */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center"
-          >
-            <div className="relative">
-              {/* Phone frame */}
-              <div className="w-[280px] h-[560px] bg-navy-dark rounded-[40px] border-4 border-white/10 p-3 shadow-2xl">
-                <div className="w-full h-full rounded-[28px] bg-gradient-to-br from-[#1a2f50] to-[#0d1b33] flex flex-col items-center justify-center gap-4 overflow-hidden">
-                  <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <div className="w-32 h-3 bg-white/10 rounded-full" />
-                  <div className="w-24 h-3 bg-white/10 rounded-full" />
-                  <div className="grid grid-cols-2 gap-3 mt-4 px-4 w-full">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="h-24 bg-white/5 rounded-xl border border-white/10" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating cards */}
-              <div className="absolute -right-8 top-20 bg-card rounded-xl shadow-card px-4 py-3 animate-float border border-border">
-                <p className="text-sm font-semibold text-foreground">Order Received ✓</p>
-                <p className="text-xs text-muted-foreground">Dress — KSh 1,200</p>
-              </div>
-
-              <div className="absolute -left-8 bottom-32 bg-card rounded-xl shadow-card px-4 py-3 animate-float-delayed border border-border">
-                <p className="text-sm font-semibold text-foreground">New Sale 🛍️</p>
-                <p className="text-xs text-muted-foreground">+KSh 3,500 today</p>
-              </div>
+            {/* Trust indicators */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {trustBadges.map((label) => (
+                <span
+                  key={label}
+                  className="flex items-center gap-1.5 text-sm text-muted-foreground"
+                >
+                  <Check size={14} className="text-accent-red shrink-0" strokeWidth={2.5} />
+                  {label}
+                </span>
+              ))}
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

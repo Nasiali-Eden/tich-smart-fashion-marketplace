@@ -18,26 +18,27 @@ const FinalCTA = () => {
           className="text-center max-w-2xl mx-auto"
         >
           <span className="inline-block px-4 py-1.5 rounded-full border border-white/20 text-soft-white text-sm mb-6">
-            🛍️ Join the Movement
+            Join the Movement
           </span>
           <h2 className="text-3xl md:text-[48px] font-bold text-soft-white leading-tight mb-5">
             Start Selling Your Fashion Today.
           </h2>
-          <p className="text-lg md:text-xl text-slate-custom mb-8 max-w-lg mx-auto">
+          <p className="text-lg md:text-xl text-slate-custom mb-4 max-w-lg mx-auto">
             Join hundreds of vendors building their clothing business on a platform that actually works.
+            M-Pesa payments are already live — the app is coming soon on iOS and Android.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a href="#" className="bg-accent-red text-soft-white px-8 py-3.5 rounded-lg font-semibold btn-glow transition-all duration-300">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#"
+              className="bg-accent-red text-soft-white px-8 py-3.5 rounded-lg font-semibold btn-glow transition-all duration-300"
+            >
               Download App
-            </a>
-            <a href="#" className="border border-white/30 text-soft-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/100 hover:text-foreground transition-all duration-300">
-              Join Vendor Waitlist
             </a>
           </div>
 
-          <p className="text-sm text-slate-dark-custom">
-            📱 iOS & Android &nbsp;|&nbsp; 🔒 Secure Platform &nbsp;|&nbsp; 🇰🇪 Built for Kenya
+          <p className="text-slate-dark-custom text-xs mt-8">
+            Built for Kenya &nbsp;|&nbsp; iOS &amp; Android — Coming Soon &nbsp;|&nbsp; M-Pesa Ready
           </p>
         </motion.div>
       </div>
