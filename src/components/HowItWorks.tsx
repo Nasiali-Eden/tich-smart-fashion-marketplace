@@ -14,8 +14,8 @@ const buyerSteps = [
   { num: "03", icon: Search, title: "Browse & Follow", body: "Follow your favorite vendors and find unique items filtered exactly to your size." },
 ];
 
-const HowItWorks = () => {
-  const [activeTab, setActiveTab] = useState<"buyer" | "vendor">("buyer");
+const HowItWorks = ({ defaultTab = "buyer" }: { defaultTab?: "buyer" | "vendor" }) => {
+  const [activeTab, setActiveTab] = useState<"buyer" | "vendor">(defaultTab);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 

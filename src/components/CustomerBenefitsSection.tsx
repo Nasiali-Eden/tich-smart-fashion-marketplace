@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { SlidersHorizontal, Heart, Palette, type LucideIcon } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ShoppingBag, Star, Bell, Package, type LucideIcon } from "lucide-react";
 
 interface CustomerFeature {
   badge: string;
@@ -10,53 +9,53 @@ interface CustomerFeature {
   icon: LucideIcon;
   imageUrl: string;
   imageAlt: string;
-  comingSoon?: boolean;
 }
 
 const customerFeatures: CustomerFeature[] = [
   {
-    badge: "Personalized Access",
-    title: "Shop by your size.",
-    body: "Browse curated collections filtered to your exact measurements. Every listing on Tich is structured with precise size data — so you only see what fits.",
-    icon: SlidersHorizontal,
+    badge: "Easy Shopping",
+    title: "Seamless Shopping Experience",
+    body: "Browse the latest trends, timeless classics, and everything in between—all at your fingertips. Shopping has never been this easy.",
+    icon: ShoppingBag,
     imageUrl:
-      "https://images.pexels.com/photos/33970684/pexels-photo-33970684.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt:
-      "Woman in white dress with smartphone — photo by Vui Studio on Pexels",
-    comingSoon: false,
+      "https://images.pexels.com/photos/6956390/pexels-photo-6956390.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Woman browsing fashion on smartphone",
   },
   {
-    badge: "Vendor Updates",
-    title: "Follow your favorites.",
-    body: "Stay connected with the vendors you love. Follow boutiques and independent sellers to get notified the moment they drop new inventory.",
-    icon: Heart,
+    badge: "Style Confidence",
+    title: "Look and Feel Your Best",
+    body: "Find styles that match your unique personality, crafted by talented designers. Just a tap away.",
+    icon: Star,
     imageUrl:
-      "https://images.pexels.com/photos/17293347/pexels-photo-17293347.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt:
-      "Modern clothing store with neutral garments on hanging racks — photo by Pew Nguyen on Pexels",
-    comingSoon: false,
+      "https://images.pexels.com/photos/2220316/pexels-photo-2220316.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Stylish confident woman in fashion outfit",
   },
   {
-    badge: "Coming Soon",
-    title: "Discover the creators.",
-    body: "Meet the designers and artisans behind the brands you love. Explore their stories, browse their full collections, and connect directly with the talent shaping African fashion.",
-    icon: Palette,
+    badge: "Personalized Updates",
+    title: "Stay In the Know",
+    body: "Follow your favorite stores, get exclusive offers, and stay updated on new arrivals with personalized recommendations.",
+    icon: Bell,
     imageUrl:
-      "https://images.pexels.com/photos/7148007/pexels-photo-7148007.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt:
-      "Fashion designer working with fabric on mannequin in atelier — photo by Michael Burrows on Pexels",
-    comingSoon: true,
+      "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Person receiving fashion notifications on phone",
+  },
+  {
+    badge: "Doorstep Delivery",
+    title: "Convenience Delivered",
+    body: "Enjoy the simplicity of having your favorite items delivered straight to your doorstep, wherever you are.",
+    icon: Package,
+    imageUrl:
+      "https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageAlt: "Fashion package delivered to doorstep",
   },
 ];
 
 const FashionImageCard = ({
   imageUrl,
   imageAlt,
-  comingSoon,
 }: {
   imageUrl: string;
   imageAlt: string;
-  comingSoon?: boolean;
 }) => (
   <div className="flex justify-center">
     <div className="relative w-[300px] md:w-[340px] rounded-3xl overflow-hidden shadow-xl">
@@ -66,13 +65,6 @@ const FashionImageCard = ({
         className="w-full h-[440px] object-cover"
         loading="lazy"
       />
-      {comingSoon && (
-        <div className="absolute inset-0 bg-foreground/55 backdrop-blur-[3px] flex items-center justify-center">
-          <span className="bg-white text-foreground text-sm font-semibold px-5 py-2 rounded-full shadow-lg">
-            Coming Soon
-          </span>
-        </div>
-      )}
     </div>
   </div>
 );
@@ -98,11 +90,7 @@ const CustomerFeatureRow = ({
     >
       {/* Image column */}
       <div className={!imageLeft ? "md:order-2" : ""}>
-        <FashionImageCard
-          imageUrl={feat.imageUrl}
-          imageAlt={feat.imageAlt}
-          comingSoon={feat.comingSoon}
-        />
+        <FashionImageCard imageUrl={feat.imageUrl} imageAlt={feat.imageAlt} />
       </div>
 
       {/* Text column */}
@@ -113,13 +101,7 @@ const CustomerFeatureRow = ({
         </div>
 
         {/* Badge */}
-        <span
-          className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 ${
-            feat.comingSoon
-              ? "bg-muted text-muted-foreground border border-border"
-              : "bg-accent/10 text-accent-red"
-          }`}
-        >
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 bg-accent/10 text-accent-red">
           {feat.badge}
         </span>
 
@@ -134,19 +116,18 @@ const CustomerFeatureRow = ({
 
 const CustomerBenefitsSection = () => {
   return (
-    <section id="for-buyers" className="bg-background py-20 md:py-28">
+    <section id="discover" className="bg-background py-20 md:py-28">
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-accent-red text-sm font-bold uppercase tracking-widest">
-            For Buyers
+            For You
           </span>
           <h2 className="text-3xl md:text-[40px] font-bold text-foreground mt-3">
-            Everything You Need to Find Your Style
+            Discover Fashion That Fits You
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto text-base leading-relaxed">
-            Tich is built for buyers who know what they want — filtered by
-            size, curated by taste.
+            Unleash your style with the latest trends.
           </p>
         </div>
 
