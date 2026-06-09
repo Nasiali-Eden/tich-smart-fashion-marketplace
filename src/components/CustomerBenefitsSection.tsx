@@ -17,9 +17,8 @@ const customerFeatures: CustomerFeature[] = [
     title: "Seamless Shopping Experience",
     body: "Browse the latest trends, timeless classics, and everything in between—all at your fingertips. Shopping has never been this easy.",
     icon: ShoppingBag,
-    imageUrl:
-      "https://images.pexels.com/photos/6956390/pexels-photo-6956390.jpeg?auto=compress&cs=tinysrgb&w=600",
-    imageAlt: "Woman browsing fashion on smartphone",
+    imageUrl: "/images/Other/a2.png",
+    imageAlt: "Fashion shopping experience",
   },
   {
     badge: "Style Confidence",

@@ -37,7 +37,7 @@ const HowItWorks = ({ defaultTab = "buyer" }: { defaultTab?: "buyer" | "vendor" 
                 onClick={() => setActiveTab("buyer")}
                 className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${
                   activeTab === "buyer" 
-                    ? "bg-accent-red text-white shadow-lg" 
+                    ? "bg-white text-navy shadow-lg"
                     : "text-slate-custom hover:text-soft-white"
                 }`}
               >
@@ -47,7 +47,7 @@ const HowItWorks = ({ defaultTab = "buyer" }: { defaultTab?: "buyer" | "vendor" 
                 onClick={() => setActiveTab("vendor")}
                 className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${
                   activeTab === "vendor" 
-                    ? "bg-accent-red text-white shadow-lg" 
+                    ? "bg-white text-navy shadow-lg"
                     : "text-slate-custom hover:text-soft-white"
                 }`}
               >
@@ -65,7 +65,7 @@ const HowItWorks = ({ defaultTab = "buyer" }: { defaultTab?: "buyer" | "vendor" 
           className="relative"
         >
           {/* Desktop dashed line */}
-          <div className="hidden md:block absolute top-[60px] left-[16.66%] right-[16.66%] h-0.5 border-t-2 border-dashed border-accent/40" />
+          <div className="hidden md:block absolute top-[60px] left-[16.66%] right-[16.66%] h-0.5 border-t-2 border-dashed border-white/20" />
 
           <AnimatePresence mode="wait">
             <motion.div 
@@ -77,11 +77,11 @@ const HowItWorks = ({ defaultTab = "buyer" }: { defaultTab?: "buyer" | "vendor" 
               className="grid md:grid-cols-3 gap-10 relative mt-12"
             >
               {/* Mobile vertical line */}
-              <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-accent/40" />
+              <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-white/20" />
 
               {steps.map((step, i) => (
                 <div key={i} className="relative flex md:flex-col items-start md:items-center text-center gap-4 md:gap-0 pl-14 md:pl-0">
-                  <div className="absolute left-3 md:static w-10 h-10 md:w-14 md:h-14 rounded-full bg-accent-red flex items-center justify-center text-soft-white font-bold text-sm md:text-base shrink-0 z-10">
+                  <div className="absolute left-3 md:static w-10 h-10 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center text-navy font-bold text-sm md:text-base shrink-0 z-10">
                     {step.num}
                   </div>
                   <div className="md:mt-6">

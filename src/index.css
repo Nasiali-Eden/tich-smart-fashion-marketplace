@@ -24,7 +24,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 355 78% 56%;
+    --accent: 213 70% 14%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 355 78% 56%;
@@ -32,7 +32,7 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 355 78% 56%;
+    --ring: 213 70% 14%;
 
     --radius: 0.75rem;
 
@@ -40,8 +40,8 @@
     --navy: 213 70% 14%;
     --navy-light: 213 55% 17%;
     --navy-dark: 215 78% 7%;
-    --red: 355 78% 56%;
-    --red-glow: 0 0 12px rgba(230, 57, 70, 0.4);
+    --red: 213 70% 14%;
+    --red-glow: 0 0 20px rgba(0, 31, 63, 0.22);
     --soft-white: 210 20% 98%;
     --slate: 215 20% 65%;
     --slate-dark: 215 16% 47%;
@@ -77,46 +77,6 @@
 }
 
 @layer utilities {
-  .text-slate-custom {
-    color: hsl(var(--slate));
-  }
-
-  .text-slate-dark-custom {
-    color: hsl(var(--slate-dark));
-  }
-
-  .bg-navy {
-    background-color: hsl(var(--navy));
-  }
-
-  .bg-navy-light {
-    background-color: hsl(var(--navy-light));
-  }
-
-  .bg-navy-dark {
-    background-color: hsl(var(--navy-dark));
-  }
-
-  .bg-section-light {
-    background-color: hsl(var(--section-light));
-  }
-
-  .text-soft-white {
-    color: hsl(var(--soft-white));
-  }
-
-  .bg-accent-red {
-    background-color: hsl(var(--red));
-  }
-
-  .text-accent-red {
-    color: hsl(var(--red));
-  }
-
-  .border-accent-red {
-    border-color: hsl(var(--red));
-  }
-
   .shadow-card {
     box-shadow: var(--shadow-card);
   }

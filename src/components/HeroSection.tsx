@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Store } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -23,18 +22,18 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent-red text-xs font-semibold tracking-wider uppercase mb-7">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-red shrink-0" />
+            <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl bg-navy/8 border border-navy/12 text-navy text-[11px] font-bold tracking-[0.12em] uppercase mb-8">
+              <Sparkles size={11} strokeWidth={2.5} className="shrink-0" />
               African Fashion Marketplace
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-[52px] lg:text-[58px] font-extrabold leading-[1.08] tracking-tight mb-5">
-              <span className="text-[#001F3F]">Explore the</span>
+            <h1 className="text-4xl md:text-[52px] lg:text-[58px] font-extrabold leading-[1.08] tracking-tight mb-5 text-navy">
+              Explore the
               <br />
-              <span className="text-[#001F3F]">World of</span>
+              World of
               <br />
-              <span className="text-accent-red">Fashion.</span>
+              <span className="italic">Fashion.</span>
             </h1>
 
             {/* Subtitle */}
@@ -42,23 +41,14 @@ const HeroSection = () => {
               Step into a new world of fashion and find pieces that perfectly express your style.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="#discover"
-                className="inline-flex items-center justify-center gap-2.5 bg-accent-red text-white px-7 py-3.5 rounded-xl font-semibold text-[15px] btn-glow transition-all duration-300 hover:opacity-90"
-              >
-                <ArrowRight size={17} strokeWidth={2.2} />
-                Discover Now
-              </a>
-              <Link
-                to="/vendor"
-                className="inline-flex items-center justify-center gap-2.5 border-2 border-foreground text-foreground px-7 py-3.5 rounded-xl font-semibold text-[15px] hover:bg-foreground hover:text-white transition-all duration-300"
-              >
-                <Store size={17} strokeWidth={2.2} />
-                For Vendors
-              </Link>
-            </div>
+            {/* CTA */}
+            <a
+              href="#discover"
+              className="inline-flex items-center gap-3 bg-navy text-white px-9 py-4 rounded-full font-semibold text-[15px] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Discover Now
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </a>
           </motion.div>
         </div>
       </div>

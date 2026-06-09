@@ -2,9 +2,8 @@ import tichLogo from "@/assets/tich-logo-full.png";
 
 const footerLinks = {
   quick: [
-    { label: "For Buyers", href: "#for-buyers" },
+    { label: "Discover Fashion", href: "#discover" },
     { label: "How It Works", href: "#how-it-works" },
-    { label: "For Vendors", href: "#for-vendors" },
     { label: "Download App", href: "#download" },
   ],
   legal: [
@@ -36,6 +35,8 @@ const Footer = () => {
   return (
     <footer className="bg-navy-dark py-14">
       <div className="container mx-auto px-6">
+
+        {/* Main footer grid */}
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Brand column */}
           <div>
@@ -44,43 +45,18 @@ const Footer = () => {
               The structured marketplace for fashion vendors.
             </p>
 
-            {/* Social icons */}
             <div className="flex gap-4 mb-5">
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/company/113093099/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-dark-custom hover:text-accent-red transition-colors"
-                aria-label="LinkedIn"
-              >
+              <a href="https://www.linkedin.com/company/113093099/" target="_blank" rel="noopener noreferrer" className="text-slate-dark-custom hover:text-white transition-colors" aria-label="LinkedIn">
                 <LinkedInIcon />
               </a>
-
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/tichatelierltd/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-dark-custom hover:text-accent-red transition-colors"
-                aria-label="Instagram"
-              >
+              <a href="https://www.instagram.com/tichatelierltd/" target="_blank" rel="noopener noreferrer" className="text-slate-dark-custom hover:text-white transition-colors" aria-label="Instagram">
                 <InstagramIcon />
               </a>
-
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/profile.php?id=61588804154961"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-dark-custom hover:text-accent-red transition-colors"
-                aria-label="Facebook"
-              >
+              <a href="https://www.facebook.com/profile.php?id=61588804154961" target="_blank" rel="noopener noreferrer" className="text-slate-dark-custom hover:text-white transition-colors" aria-label="Facebook">
                 <FacebookIcon />
               </a>
             </div>
 
-            {/* Email placeholder */}
             <p className="text-slate-dark-custom text-xs">
               Email: <span className="text-slate-custom italic">coming soon</span>
             </p>
@@ -113,11 +89,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 text-center">
+        {/* Copyright */}
+        <div className="border-t border-white/10 pt-5 text-center">
           <p className="text-slate-dark-custom text-xs">
             © 2025 Tich. All rights reserved. Built for African fashion commerce.
           </p>
         </div>
+
       </div>
     </footer>
   );

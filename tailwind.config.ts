@@ -60,6 +60,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Brand tokens — use these instead of hand-written @layer utilities
+        navy: "hsl(var(--navy))",
+        "navy-light": "hsl(var(--navy-light))",
+        "navy-dark": "hsl(var(--navy-dark))",
+        "accent-red": "hsl(var(--red))",
+        "soft-white": "hsl(var(--soft-white))",
+        "slate-custom": "hsl(var(--slate))",
+        "slate-dark-custom": "hsl(var(--slate-dark))",
+        "section-light": "hsl(var(--section-light))",
       },
       borderRadius: {
         lg: "var(--radius)",

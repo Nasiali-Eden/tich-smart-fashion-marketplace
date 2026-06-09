@@ -1,8 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import {
-  Store,
-  ShieldCheck,
-  BarChart3,
+  ImageIcon,
+  MessageCircle,
+  TrendingUp,
   Smartphone,
   ArrowRight,
   type LucideIcon,
@@ -17,19 +17,19 @@ interface CardData {
 
 const cards: CardData[] = [
   {
-    icon: Store,
-    title: "Structured Listings That Work",
-    body: "Stop selling through messy DMs. Upload clothes with proper categories, sizes, and pricing — all in one place.",
+    icon: ImageIcon,
+    title: "Showcase Your Products",
+    body: "Highlight your latest collections, best-sellers, and unique offerings with eye-catching images and compelling descriptions.",
   },
   {
-    icon: ShieldCheck,
-    title: "Trusted Transactions",
-    body: "Buyers and sellers transact with confidence. No more payment confusion.",
+    icon: MessageCircle,
+    title: "Engage with Shoppers",
+    body: "Build a loyal customer base by interacting with buyers, responding to inquiries, and sharing updates.",
   },
   {
-    icon: BarChart3,
-    title: "Vendor Dashboard",
-    body: "Track your orders, sales, and inventory from one clean dashboard.",
+    icon: TrendingUp,
+    title: "Boost Your Sales",
+    body: "Leverage our platform's reach to increase conversions and grow your business effortlessly.",
   },
   {
     icon: Smartphone,
@@ -114,10 +114,10 @@ const WhyUsSection = () => {
         {/* Header */}
         <div className="text-center mb-14">
           <span className="text-accent-red text-sm font-bold uppercase tracking-widest">
-            Why Choose Us
+            For Vendors
           </span>
           <h2 className="text-3xl md:text-[40px] font-bold text-foreground mt-3">
-            Why Vendors Choose Tich
+            Everything You Need to Grow
           </h2>
         </div>
 

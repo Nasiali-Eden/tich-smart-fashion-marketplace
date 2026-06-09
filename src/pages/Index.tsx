@@ -2,7 +2,8 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import CustomerBenefitsSection from "@/components/CustomerBenefitsSection";
 import HowItWorks from "@/components/HowItWorks";
-import FAQSection from "@/components/FAQSection";
+import SellerStrip from "@/components/SellerStrip";
+// import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -13,7 +14,8 @@ const Index = () => {
       <HeroSection />
       <CustomerBenefitsSection />
       <HowItWorks defaultTab="buyer" />
-      <FAQSection />
+      <SellerStrip />
+      {/* <FAQSection /> */}
       <FinalCTA />
       <Footer />
     </div>

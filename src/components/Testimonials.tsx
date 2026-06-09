@@ -6,7 +6,7 @@ const promises = [
   {
     icon: ShoppingBag,
     title: "A marketplace that makes sense",
-    body: "No more chaotic DMs or confusing WhatsApp groups. Every listing will be structured with categories, sizes, pricing, and photos — so buyers can find exactly what they need.",
+    body: "Every listing will be structured with categories, sizes, pricing, and photos — so buyers can find exactly what they need.",
   },
   {
     icon: Bell,
@@ -62,8 +62,8 @@ const Testimonials = () => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 transition-colors duration-300"
               >
-                <div className="w-11 h-11 rounded-xl bg-accent-red/15 flex items-center justify-center mb-4">
-                  <item.icon size={22} className="text-accent-red" />
+                <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                  <item.icon size={22} className="text-white" />
                 </div>
                 <h3 className="text-soft-white font-bold text-lg mb-2">{item.title}</h3>
                 <p className="text-slate-custom text-sm leading-relaxed">{item.body}</p>
