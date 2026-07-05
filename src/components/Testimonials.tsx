@@ -25,12 +25,12 @@ const promises = [
   },
 ];
 
-const Testimonials = () => {
+const Testimonials = ({ bare = false }: { bare?: boolean }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section className="bg-navy py-20 md:py-28">
+    <section className={`py-20 md:py-28 ${bare ? "" : "bg-navy"}`}>
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp 'ChatGPT Image Jun 30, 2026, 03_49_20 PM.png' discover-bg-1.png)",
+      "Bash(cp 'ChatGPT Image Jun 30, 2026, 03_52_51 PM.png' discover-bg-2.png)",
+      "Bash(cp 'ChatGPT Image Jun 30, 2026, 04_02_56 PM.png' discover-bg-3.png)",
+      "Bash(agent-browser skills *)",
+      "PowerShell(agent-browser skills get core --full 2>&1)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(node 'C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Admin-Desktop-tich-smart-fashion-marketplace\\\\02138961-22c4-408d-98ad-39d828b1fdeb\\\\scratchpad\\\\measure.mjs')",
+      "Bash(node _shot.mjs)",
+      "Bash(rm -f _shot.mjs)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "Read(//c/Users/Admin/AppData/Local/Temp/**)"
+    ]
+  }
+}

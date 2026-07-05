@@ -1,5 +1,5 @@
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { UserPlus, UploadCloud, ShoppingBag, Ruler, Search, Heart } from "lucide-react";
 
 const vendorSteps = [
@@ -9,52 +9,66 @@ const vendorSteps = [
 ];
 
 const buyerSteps = [
-  { num: "01", icon: UserPlus, title: "Create Profile", body: "Set up your personal profile in seconds to start your fashion journey." },
-  { num: "02", icon: Ruler, title: "Choose Your Sizes", body: "Set your size preferences once to find the perfect fit across all vendors." },
-  { num: "03", icon: Search, title: "Browse & Follow", body: "Follow your favorite vendors and find unique items filtered exactly to your size." },
+  {
+    num: "01",
+    icon: UserPlus,
+    title: "Create Your Profile",
+    body: "Begin your fashion journey by setting up your personal profile in just a few simple steps.",
+  },
+  {
+    num: "02",
+    icon: Ruler,
+    title: "Choose Your Sizes",
+    body: "Save your size preferences once to make browsing seamless—enjoy perfectly matched items every time. Have a loved one? Add their profiles too and surprise them with a thoughtful gift.",
+  },
+  {
+    num: "03",
+    icon: Search,
+    title: "Browse & Follow",
+    body: "Discover your favorite stores and follow them for updates. Explore unique pieces curated for you and get inspired by the fashion that sparks your creativity.",
+  },
 ];
 
-const HowItWorks = ({ defaultTab = "buyer" }: { defaultTab?: "buyer" | "vendor" }) => {
-  const [activeTab, setActiveTab] = useState<"buyer" | "vendor">(defaultTab);
+type Audience = "buyer" | "vendor";
+
+const HowItWorks = ({
+  audience = "buyer",
+  bare = false,
+}: {
+  audience?: Audience;
+  bare?: boolean;
+}) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const steps = activeTab === "buyer" ? buyerSteps : vendorSteps;
+  const steps = audience === "buyer" ? buyerSteps : vendorSteps;
 
   return (
-    <section id="how-it-works" className="bg-navy py-20 md:py-28 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section
+      id="how-it-works"
+      className={`relative overflow-hidden py-20 md:py-28 ${bare ? "" : "bg-navy"}`}
+    >
+      {!bare && (
+        <div className="pointer-events-none absolute inset-0">
+          <img
+            src="/images/Other/discover-bg-2.png"
+            alt=""
+            className="h-full w-full scale-110 object-cover object-center opacity-[0.7]"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/82 via-navy/48 to-navy/84" />
+          {/* Seam: solid navy at top (receives For You's navy hand-off) and bottom (into Final CTA) */}
+          <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-navy via-navy to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy to-transparent" />
+        </div>
+      )}
+
+      <div className="container relative z-10 mx-auto px-6">
         <div className="text-center mb-12">
-          <span className="text-accent-red text-sm font-bold uppercase tracking-widest">How It Works</span>
+          <span className="text-white/60 text-sm font-bold uppercase tracking-widest">How It Works</span>
           <h2 className="text-3xl md:text-[40px] font-bold text-soft-white mt-3">
-            Up and running in minutes.
+            Get Started in Minutes
           </h2>
-          
-          {/* Toggle */}
-          <div className="flex justify-center mt-10">
-            <div className="bg-white/5 p-1 rounded-2xl border border-white/10 flex">
-              <button
-                onClick={() => setActiveTab("buyer")}
-                className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${
-                  activeTab === "buyer" 
-                    ? "bg-white text-navy shadow-lg"
-                    : "text-slate-custom hover:text-soft-white"
-                }`}
-              >
-                For Buyers
-              </button>
-              <button
-                onClick={() => setActiveTab("vendor")}
-                className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${
-                  activeTab === "vendor" 
-                    ? "bg-white text-navy shadow-lg"
-                    : "text-slate-custom hover:text-soft-white"
-                }`}
-              >
-                For Vendors
-              </button>
-            </div>
-          </div>
         </div>
 
         <motion.div
@@ -64,37 +78,33 @@ const HowItWorks = ({ defaultTab = "buyer" }: { defaultTab?: "buyer" | "vendor" 
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          {/* Desktop dashed line */}
-          <div className="hidden md:block absolute top-[60px] left-[16.66%] right-[16.66%] h-0.5 border-t-2 border-dashed border-white/20" />
+          <motion.div
+            key={audience}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="grid md:grid-cols-3 gap-5 md:gap-6 relative"
+          >
+            {steps.map((step, i) => (
+              <div
+                key={i}
+                className="glass-dark group relative flex items-start gap-4 rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1 md:flex-col md:items-start md:p-6"
+              >
+                {/* Big watermark number */}
+                <span className="pointer-events-none absolute right-4 top-2 text-2xl md:text-3xl font-extrabold leading-none text-white/[0.1] select-none">
+                  {step.num}
+                </span>
 
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={activeTab}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3 }}
-              className="grid md:grid-cols-3 gap-10 relative mt-12"
-            >
-              {/* Mobile vertical line */}
-              <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-white/20" />
-
-              {steps.map((step, i) => (
-                <div key={i} className="relative flex md:flex-col items-start md:items-center text-center gap-4 md:gap-0 pl-14 md:pl-0">
-                  <div className="absolute left-3 md:static w-10 h-10 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center text-navy font-bold text-sm md:text-base shrink-0 z-10">
-                    {step.num}
-                  </div>
-                  <div className="md:mt-6">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-4 hidden md:flex">
-                      <step.icon className="text-soft-white" size={22} />
-                    </div>
-                    <h3 className="text-lg font-bold text-soft-white mb-2 text-left md:text-center">{step.title}</h3>
-                    <p className="text-slate-custom text-sm leading-relaxed text-left md:text-center">{step.body}</p>
-                  </div>
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15 md:h-12 md:w-12">
+                  <step.icon className="text-soft-white" size={22} />
                 </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+                <div className="md:mt-5">
+                  <h3 className="text-lg font-bold text-soft-white mb-2">{step.title}</h3>
+                  <p className="text-slate-custom text-sm leading-relaxed">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>

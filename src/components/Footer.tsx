@@ -31,16 +31,18 @@ const FacebookIcon = () => (
   </svg>
 );
 
-const Footer = () => {
+const Footer = ({ bare = false }: { bare?: boolean }) => {
   return (
-    <footer className="bg-navy-dark py-14">
-      <div className="container mx-auto px-6">
+    <footer className={`relative overflow-hidden py-14 ${bare ? "" : "bg-navy-dark"}`}>
+      {/* On a shared photo backdrop the wrapper supplies the continuous darkening;
+          no extra overlay here so the strip + footer read as one seamless image */}
+      <div className="container relative z-10 mx-auto px-6">
 
         {/* Main footer grid */}
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Brand column */}
           <div>
-            <img src={tichLogo} alt="Tich" className="h-14 mb-4 brightness-0 invert" />
+            <img src={tichLogo} alt="Tich" className="h-16 md:h-20 mb-4 brightness-0 invert" />
             <p className="text-slate-dark-custom text-sm mb-5">
               The structured marketplace for fashion vendors.
             </p>

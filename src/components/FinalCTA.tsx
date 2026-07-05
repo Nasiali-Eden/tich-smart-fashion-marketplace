@@ -2,12 +2,28 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import AppStoreButtons from "@/components/AppStoreButtons";
 
-const FinalCTA = () => {
+const FinalCTA = ({ bare = false }: { bare?: boolean }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section id="download" className="bg-navy py-20 md:py-28 relative overflow-hidden">
+    <section
+      id="download"
+      className={`relative overflow-hidden py-20 md:py-28 ${bare ? "" : "bg-navy"}`}
+    >
+      {!bare && (
+        <div className="pointer-events-none absolute inset-0">
+          <img
+            src="/images/Other/a2.png"
+            alt=""
+            className="h-full w-full scale-110 object-cover object-[54%_center] opacity-[0.32]"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/84 via-navy/76 to-navy/88" />
+          {/* Seam: solid navy at top to meet How It Works seamlessly */}
+          <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-navy via-navy to-transparent" />
+        </div>
+      )}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_bottom,_rgba(0,31,63,0.4)_0%,_transparent_60%)]" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -16,7 +32,7 @@ const FinalCTA = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto"
+          className="mx-auto max-w-2xl rounded-3xl border border-white/10 bg-navy-light px-6 py-10 text-center shadow-2xl md:px-10"
         >
           <span className="inline-block px-4 py-1.5 rounded-full border border-white/20 text-soft-white text-sm mb-6">
             Your Style Awaits

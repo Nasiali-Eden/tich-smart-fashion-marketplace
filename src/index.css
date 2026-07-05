@@ -81,6 +81,36 @@
     box-shadow: var(--shadow-card);
   }
 
+  /* ---- Glassmorphism system ---- */
+  /* Light frosted glass — for sections on white/light backgrounds */
+  .glass {
+    background-color: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 60px -20px rgba(20, 40, 80, 0.28);
+  }
+
+  /* Dark frosted glass — for navy sections */
+  .glass-dark {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Photographic frame — gallery mat look with glass edge */
+  .photo-frame {
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px) saturate(135%);
+    -webkit-backdrop-filter: blur(20px) saturate(135%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+      0 24px 70px -22px rgba(20, 40, 80, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
   .btn-glow:hover {
     box-shadow: var(--red-glow);
   }
