@@ -82,7 +82,7 @@
   }
 
   /* ---- Glassmorphism system ---- */
-  /* Light frosted glass — for sections on white/light backgrounds */
+  /* Light frosted glass - for sections on white/light backgrounds */
   .glass {
     background-color: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(20px) saturate(140%);
@@ -91,7 +91,7 @@
     box-shadow: 0 20px 60px -20px rgba(20, 40, 80, 0.28);
   }
 
-  /* Dark frosted glass — for navy sections */
+  /* Dark frosted glass - for navy sections */
   .glass-dark {
     background-color: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(18px) saturate(130%);
@@ -100,7 +100,7 @@
     box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.5);
   }
 
-  /* Photographic frame — gallery mat look with glass edge */
+  /* Photographic frame - gallery mat look with glass edge */
   .photo-frame {
     background-color: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(20px) saturate(135%);

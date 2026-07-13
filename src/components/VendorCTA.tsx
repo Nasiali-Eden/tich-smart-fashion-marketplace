@@ -18,20 +18,18 @@ const VendorCTA = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full border border-white/20 text-soft-white text-sm mb-6">
-            Join Today
-          </span>
+          
           <h2 className="text-3xl md:text-[48px] font-bold text-soft-white leading-tight mb-5">
             Join Today
           </h2>
           <p className="text-lg md:text-xl text-slate-custom mb-10 max-w-lg mx-auto">
-            Become a vendor and start reaching millions of potential customers in just a few steps.
+           To grow your reach and scale your business effortlessly.
           </p>
 
           <AppStoreButtons variant="dark" />
 
           <p className="text-slate-dark-custom text-xs mt-8">
-            Built for Kenya &nbsp;|&nbsp; iOS &amp; Android — Coming Soon &nbsp;|&nbsp; M-Pesa Ready
+            Built for Kenya &nbsp;|&nbsp; iOS &amp; Android, Coming Soon &nbsp;|&nbsp; M-Pesa Ready
           </p>
         </motion.div>
       </div>

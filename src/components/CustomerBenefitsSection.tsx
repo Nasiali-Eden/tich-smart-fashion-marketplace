@@ -15,10 +15,10 @@ const customerFeatures: CustomerFeature[] = [
   {
     badge: "Easy Shopping",
     title: "Seamless Shopping",
-    body: "Browse the latest trends, timeless classics, and everything in between—all at your fingertips.",
+    body: "Browse the latest trends, timeless classics, and everything in between, all at your fingertips.",
     points: [
       "Thousands of styles from trusted local designers",
-      "Smart filters for size, colour, and occasion",
+      "Find the right look for any occasion",
       "Save favourites and pick up right where you left off",
     ],
     icon: ShoppingBag,
@@ -80,7 +80,7 @@ const FeatureCard = ({ feat }: { feat: CustomerFeature }) => (
     variants={cardVariants}
     className="group flex items-stretch overflow-hidden rounded-2xl bg-white/25 text-left shadow-lg backdrop-blur-md transition-transform duration-300 hover:-translate-y-1"
   >
-    {/* Image — fixed-width 4:5 portrait so the whole figure shows without making wide cards too tall */}
+    {/* Image - fixed-width 4:5 portrait so the whole figure shows without making wide cards too tall */}
     <div className="relative aspect-[4/5] w-40 shrink-0 overflow-hidden sm:w-52 md:w-60 lg:w-72">
       <img
         src={feat.imageUrl}
@@ -123,7 +123,7 @@ const CustomerBenefitsSection = () => {
       id="discover"
       className="relative w-full overflow-hidden py-16 md:py-24"
     >
-      {/* Full-width photo backdrop — height follows the content */}
+      {/* Full-width photo backdrop - height follows the content */}
       <div className="absolute inset-0">
         <img
           src="/images/Other/discover-bg-3.png"
@@ -131,11 +131,11 @@ const CustomerBenefitsSection = () => {
           className="h-full w-full object-cover object-center"
           loading="lazy"
         />
-        {/* Light readability scrim — kept low so the backdrop stays visible */}
+        {/* Light readability scrim - kept low so the backdrop stays visible */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/15 to-white/45" />
       </div>
 
-      {/* Content — full container width up to normal page padding */}
+      {/* Content - full container width up to normal page padding */}
       <div className="container relative z-10 mx-auto px-6">
         {/* Header */}
         <div className="mb-12 text-center md:mb-16">
@@ -150,7 +150,7 @@ const CustomerBenefitsSection = () => {
           </p>
         </div>
 
-        {/* Cards — full-width, stacked one per row at every width */}
+        {/* Cards - full-width, stacked one per row at every width */}
         <motion.div
           initial="hidden"
           whileInView="show"

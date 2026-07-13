@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-const BuyerStrip = ({ bare = false }: { bare?: boolean }) => {
+const CustomerStrip = ({ bare = false }: { bare?: boolean }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -63,4 +63,4 @@ const BuyerStrip = ({ bare = false }: { bare?: boolean }) => {
   );
 };
 
-export default BuyerStrip;
+export default CustomerStrip;

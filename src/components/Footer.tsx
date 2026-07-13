@@ -42,7 +42,7 @@ const Footer = ({ bare = false }: { bare?: boolean }) => {
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Brand column */}
           <div>
-            <img src={tichLogo} alt="Tich" className="h-16 md:h-20 mb-4 brightness-0 invert" />
+            <img src={tichLogo} alt="Tich" className="h-16 md:h-20 -mt-4 md:-mt-6 mb-4 brightness-0 invert" />
             <p className="text-slate-dark-custom text-sm mb-5">
               The structured marketplace for fashion vendors.
             </p>

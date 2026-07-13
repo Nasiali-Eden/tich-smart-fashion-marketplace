@@ -38,7 +38,7 @@ const VendorHeroSection = () => {
 
             {/* Subtitle */}
             <p className="text-lg text-white/75 max-w-[490px] mb-10 leading-relaxed">
-              Elevate your brand's visibility and connect with shoppers worldwide. Our vendor page is your gateway to an audience of millions.
+              Elevate your brand's visibility and connect with shoppers worldwide. This space is your gateway to an audience of millions.
             </p>
 
             {/* CTA Buttons */}

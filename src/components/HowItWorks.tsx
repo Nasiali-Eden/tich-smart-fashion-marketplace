@@ -5,10 +5,10 @@ import { UserPlus, UploadCloud, ShoppingBag, Ruler, Search, Heart } from "lucide
 const vendorSteps = [
   { num: "01", icon: UserPlus, title: "Create Vendor Profile", body: "Sign up in minutes. Add your store name, categories you sell, and your contact details." },
   { num: "02", icon: UploadCloud, title: "Upload Your Clothing", body: "Use the structured upload system to add your products with sizes, photos, and prices." },
-  { num: "03", icon: ShoppingBag, title: "Receive Orders & Grow", body: "Buyers discover your store. You get notified, confirm orders, and grow your sales." },
+  { num: "03", icon: ShoppingBag, title: "Receive Orders & Grow", body: "Customers discover your store. You get notified, confirm orders, and grow your sales." },
 ];
 
-const buyerSteps = [
+const customerSteps = [
   {
     num: "01",
     icon: UserPlus,
@@ -19,7 +19,7 @@ const buyerSteps = [
     num: "02",
     icon: Ruler,
     title: "Choose Your Sizes",
-    body: "Save your size preferences once to make browsing seamless—enjoy perfectly matched items every time. Have a loved one? Add their profiles too and surprise them with a thoughtful gift.",
+    body: "Save your size preferences once to make browsing seamless, enjoy perfectly matched items every time. Have a loved one? Add their profiles too and surprise them with a thoughtful gift.",
   },
   {
     num: "03",
@@ -29,10 +29,10 @@ const buyerSteps = [
   },
 ];
 
-type Audience = "buyer" | "vendor";
+type Audience = "customer" | "vendor";
 
 const HowItWorks = ({
-  audience = "buyer",
+  audience = "customer",
   bare = false,
 }: {
   audience?: Audience;
@@ -41,7 +41,7 @@ const HowItWorks = ({
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const steps = audience === "buyer" ? buyerSteps : vendorSteps;
+  const steps = audience === "customer" ? customerSteps : vendorSteps;
 
   return (
     <section

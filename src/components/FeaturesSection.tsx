@@ -5,22 +5,19 @@ const features = [
   {
     badge: "Smart Listings",
     title: "Upload clothes the structured way",
-    body: "Add categories, subcategories, sizes (XS–3XL + custom metrics), condition, and pricing. No guesswork — just clean data.",
-    cta: "See how it works →",
+    body: "Add categories, subcategories, sizes (XS–3XL + custom metrics), condition, and pricing. No guesswork, just clean data.",
     screen: "listing",
   },
   {
     badge: "Order Management",
     title: "Never miss an order again",
-    body: "Get instant notifications when a buyer places an order. Manage fulfillment, track status, and keep your customers happy.",
-    cta: "Learn more →",
+    body: "Get instant notifications when a customer places an order. Manage fulfillment, track status, and keep your customers happy.",
     screen: "orders",
   },
   {
     badge: "Secure Payments",
     title: "Payments built for Kenya",
-    body: "M-Pesa integration is live. Structured, traceable, and secure — so both vendors and buyers transact with full confidence.",
-    cta: "Join the waitlist →",
+    body: "M-Pesa integration is live. Structured, traceable, and secure, so both vendors and customers transact with full confidence.",
     screen: "payments",
   },
 ];
@@ -68,10 +65,7 @@ const FeatureRow = ({ feat, index }: { feat: typeof features[0]; index: number }
           {feat.badge}
         </span>
         <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{feat.title}</h3>
-        <p className="text-muted-foreground leading-relaxed mb-6">{feat.body}</p>
-        <a href="#" className="text-accent-red font-semibold text-sm hover:underline">
-          {feat.cta}
-        </a>
+        <p className="text-muted-foreground leading-relaxed">{feat.body}</p>
       </div>
     </motion.div>
   );
@@ -84,7 +78,7 @@ const FeaturesSection = () => {
         <div className="text-center mb-16">
           <span className="text-accent-red text-sm font-bold uppercase tracking-widest">Features</span>
           <h2 className="text-3xl md:text-[40px] font-bold text-foreground mt-3">
-            Everything a Vendor Needs to Succeed
+            Everything You Need to Succeed
           </h2>
         </div>
 

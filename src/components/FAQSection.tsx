@@ -3,24 +3,24 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { Plus, Minus } from "lucide-react";
 
-type TabKey = "vendor" | "buyer";
+type TabKey = "vendor" | "customer";
 
 const vendorFaqs = [
   {
     q: "Is the app free to use as a vendor?",
-    a: "Yes — creating your vendor profile and listing your clothing is completely free. We only take a small transaction fee when you make a sale.",
+    a: "Yes, creating your vendor profile and listing your clothing is completely free. We only take a small transaction fee when you make a sale.",
   },
   {
     q: "What types of clothing can I list?",
-    a: "All categories — men's, women's, kids', accessories, shoes, traditional wear, and more. The app has a structured category system so buyers can filter exactly what they're looking for.",
+    a: "All categories: men's, women's, kids', accessories, shoes, traditional wear, and more. The app has a structured category system so customers can filter exactly what they're looking for.",
   },
   {
     q: "How do payments work?",
-    a: "M-Pesa integration is already live on the platform. Payments are structured, traceable, and secure — vendors receive earnings directly through the app.",
+    a: "M-Pesa integration is already live on the platform. Payments are structured, traceable, and secure, and vendors receive earnings directly through the app.",
   },
   {
     q: "How do I manage my orders?",
-    a: "The app includes a full order management dashboard. You'll get instant notifications for new orders, can track fulfillment status, and communicate with buyers — all in one place.",
+    a: "The app includes a full order management dashboard. You'll get instant notifications for new orders, can track fulfillment status, and communicate with customers, all in one place.",
   },
   {
     q: "Is my store data secure?",
@@ -32,18 +32,18 @@ const vendorFaqs = [
   },
 ];
 
-const buyerFaqs = [
+const customerFaqs = [
   {
     q: "How do I browse and discover clothing?",
     a: "Use the Feed to browse all listings, or use the Explore tab to search by category, size, price range, and more. The structured listing system means you find exactly what you're looking for.",
   },
   {
     q: "What categories of clothing are available?",
-    a: "You'll find men's, women's, kids', accessories, shoes, traditional wear, and much more — all organized with clear categories and subcategories.",
+    a: "You'll find men's, women's, kids', accessories, shoes, traditional wear, and much more, all organized with clear categories and subcategories.",
   },
   {
     q: "How do I pay for items?",
-    a: "M-Pesa integration is already live. Payments are secure and traceable — no more sending money blind to a vendor you don't know.",
+    a: "M-Pesa integration is already live. Payments are secure and traceable, so no more sending money blind to a vendor you don't know.",
   },
   {
     q: "Can I save items I like?",
@@ -103,11 +103,11 @@ const FAQSection = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [activeTab, setActiveTab] = useState<TabKey>("vendor");
   const [openVendor, setOpenVendor] = useState<number | null>(null);
-  const [openBuyer, setOpenBuyer] = useState<number | null>(null);
+  const [openCustomer, setOpenCustomer] = useState<number | null>(null);
 
-  const currentFaqs = activeTab === "vendor" ? vendorFaqs : buyerFaqs;
-  const openIndex = activeTab === "vendor" ? openVendor : openBuyer;
-  const setOpen = activeTab === "vendor" ? setOpenVendor : setOpenBuyer;
+  const currentFaqs = activeTab === "vendor" ? vendorFaqs : customerFaqs;
+  const openIndex = activeTab === "vendor" ? openVendor : openCustomer;
+  const setOpen = activeTab === "vendor" ? setOpenVendor : setOpenCustomer;
 
   return (
     <section className="bg-section-light py-20 md:py-28">
@@ -130,7 +130,7 @@ const FAQSection = () => {
 
           {/* Tab switcher */}
           <div className="flex rounded-xl bg-card border border-border p-1.5 mb-8 shadow-card">
-            {(["vendor", "buyer"] as TabKey[]).map((tab) => (
+            {(["vendor", "customer"] as TabKey[]).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -140,7 +140,7 @@ const FAQSection = () => {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {tab === "vendor" ? "I'm a Vendor" : "I'm a Buyer"}
+                {tab === "vendor" ? "I'm a Vendor" : "I'm a Customer"}
               </button>
             ))}
           </div>

@@ -47,7 +47,7 @@ const FinalCTA = ({ bare = false }: { bare?: boolean }) => {
           <AppStoreButtons variant="dark" />
 
           <p className="text-slate-dark-custom text-xs mt-8">
-            Available on iOS &amp; Android — Coming Soon &nbsp;|&nbsp; Free to download
+            Available on iOS &amp; Android, Coming Soon &nbsp;|&nbsp; Free to download
           </p>
         </motion.div>
       </div>

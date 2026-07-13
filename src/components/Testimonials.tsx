@@ -6,22 +6,22 @@ const promises = [
   {
     icon: ShoppingBag,
     title: "A marketplace that makes sense",
-    body: "Every listing will be structured with categories, sizes, pricing, and photos — so buyers can find exactly what they need.",
+    body: "Every listing will be structured with categories, sizes, pricing, and photos, so customers can find exactly what they need.",
   },
   {
     icon: Bell,
     title: "Real-time order management",
-    body: "The moment a buyer places an order, you'll know. Manage fulfillment, track status, and communicate — all from one clean vendor dashboard.",
+    body: "The moment a customer places an order, you'll know. Manage fulfillment, track status, and communicate, all from one clean vendor dashboard.",
   },
   {
     icon: Wallet,
     title: "Payments you can trust",
-    body: "M-Pesa integration is already live. Every transaction is traceable and secure, so both vendors and buyers transact with complete confidence.",
+    body: "M-Pesa integration is already live. Every transaction is traceable and secure, so both vendors and customers transact with complete confidence.",
   },
   {
     icon: Rocket,
     title: "Built for where fashion actually happens",
-    body: "This is not a copy-paste of a Western marketplace. Tich is designed from the ground up for African fashion vendors — the categories, the sizes, the payment rails, the workflow.",
+    body: "Tich provides the tools and platform to connect your store with millions of engaged shoppers. Expand beyond your current audience and tap into a global marketplace",
   },
 ];
 
@@ -47,8 +47,8 @@ const Testimonials = ({ bare = false }: { bare?: boolean }) => {
               What We're Building for You
             </h2>
             <p className="text-slate-custom mt-4 max-w-xl mx-auto text-base leading-relaxed">
-              Tich has been built with one goal: to give fashion vendors in Africa a proper, 
-              professional home to run their business. Here's our commitment.
+              Tich has been built to give you a proper, 
+              professional home to run your business. Here's our commitment.
             </p>
           </div>
 
@@ -72,14 +72,7 @@ const Testimonials = ({ bare = false }: { bare?: boolean }) => {
           </div>
 
           {/* Sign-off */}
-          <div className="text-center mt-12">
-            <div className="inline-block border border-white/10 rounded-xl px-6 py-4 bg-white/5">
-              <p className="text-slate-custom text-sm italic">
-                "We're not done yet — but we're close. Join the waitlist and be part of the launch."
-              </p>
-              <p className="text-soft-white font-semibold text-sm mt-2">— The Tich Team</p>
-            </div>
-          </div>
+          
         </motion.div>
       </div>
     </section>

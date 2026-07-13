@@ -27,7 +27,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-navy/82 via-navy/55 to-navy/88" />
         </div>
         <div className="relative z-10">
-          <HowItWorks audience="buyer" bare />
+          <HowItWorks audience="customer" bare />
           {/* <FAQSection /> */}
           <FinalCTA bare />
         </div>

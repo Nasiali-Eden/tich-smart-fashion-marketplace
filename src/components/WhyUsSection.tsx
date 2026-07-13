@@ -24,7 +24,7 @@ const cards: CardData[] = [
   {
     icon: MessageCircle,
     title: "Engage with Shoppers",
-    body: "Build a loyal customer base by interacting with buyers, responding to inquiries, and sharing updates.",
+    body: "Build a loyal customer base by interacting with customers, responding to inquiries, and sharing updates.",
   },
   {
     icon: TrendingUp,
@@ -34,7 +34,7 @@ const cards: CardData[] = [
   {
     icon: Smartphone,
     title: "Mobile-First. Always.",
-    body: "Designed for the way vendors actually work — from their phone, on the go.",
+    body: "Designed for the way vendors actually work, from their phone, on the go.",
   },
 ];
 

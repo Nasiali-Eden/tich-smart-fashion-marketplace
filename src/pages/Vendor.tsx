@@ -1,13 +1,12 @@
 import Navbar from "@/components/Navbar";
 import VendorHeroSection from "@/components/VendorHeroSection";
-import SocialProof from "@/components/SocialProof";
 import WhyUsSection from "@/components/WhyUsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 // import FAQSection from "@/components/FAQSection";
 import VendorCTA from "@/components/VendorCTA";
-import BuyerStrip from "@/components/BuyerStrip";
+import CustomerStrip from "@/components/CustomerStrip";
 import Footer from "@/components/Footer";
 
 const Vendor = () => {
@@ -15,7 +14,6 @@ const Vendor = () => {
     <div className="min-h-screen">
       <Navbar />
       <VendorHeroSection />
-      <SocialProof />
       <WhyUsSection />
       <FeaturesSection />
 
@@ -54,7 +52,7 @@ const Vendor = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-navy/45 via-navy/65 to-navy/90" />
         </div>
         <div className="relative z-10">
-          <BuyerStrip bare />
+          <CustomerStrip bare />
           <Footer bare />
         </div>
       </div>
