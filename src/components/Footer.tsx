@@ -9,7 +9,7 @@ const footerLinks = {
   legal: [
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Use", href: "#" },
-    { label: "Contact Us", href: "#" },
+    { label: "Contact Us", href: "mailto:support@tichatelier.com" },
   ],
 };
 
@@ -60,7 +60,13 @@ const Footer = ({ bare = false }: { bare?: boolean }) => {
             </div>
 
             <p className="text-slate-dark-custom text-xs">
-              Email: <span className="text-slate-custom italic">coming soon</span>
+              Email:{" "}
+              <a
+                href="mailto:support@tichatelier.com"
+                className="text-slate-custom transition-colors hover:text-white"
+              >
+                support@tichatelier.com
+              </a>
             </p>
           </div>
 

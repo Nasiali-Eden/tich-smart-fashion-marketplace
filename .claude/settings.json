@@ -11,7 +11,9 @@
       "Bash(node _shot.mjs)",
       "Bash(rm -f _shot.mjs)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
-      "Read(//c/Users/Admin/AppData/Local/Temp/**)"
+      "Read(//c/Users/Admin/AppData/Local/Temp/**)",
+      "Bash(npx vite *)",
+      "Read(//tmp/**)"
     ]
   }
 }
