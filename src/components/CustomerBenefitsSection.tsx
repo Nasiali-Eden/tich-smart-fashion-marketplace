@@ -126,7 +126,7 @@ const CustomerBenefitsSection = () => {
       {/* Full-width photo backdrop - height follows the content */}
       <div className="absolute inset-0">
         <img
-          src="/images/Other/discover-bg-3.png"
+          src="/images/Other/discover-bg-1.png"
           alt=""
           className="h-full w-full object-cover object-center"
           loading="lazy"
